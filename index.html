@@ -5,143 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <!-- 유용한 링크 -->
-    <!-- cdnsj : https://cdnjs.com/ -->
-    <!-- 폰트어썸 아이콘 리스트 : https://fontawesome.com/icons?d=gallery&m=free -->
-
-    <!-- 구글 폰트 불러오기 -->
-    <!-- rotobo(400/700/900), notosanskr(400/600/900) -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap"
+    <!-- <link
+      href="[https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap](https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap)"
       rel="stylesheet"
     />
-
-    <!-- 폰트어썸 불러오기 (내 주소로 불러와야함)-->
-    <script
-      src="https://kit.fontawesome.com/6a96d8c3fd.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- 제이쿼리 불러오기 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <div class="top-bar con-min-width">
-      <!--메인 상단바, 너비 최소 사이즈-->
-      <div class="con height-100p flex">
-        <!--con, 높이100%, flex-->
-        <a href="#" class="logo flex flex-ai-c">
-          <!--좌측 로고 이미지, 이미지 박스, flex, 가운데정렬-->
-          <i class="fa-solid fa-children"></i>
-        </a>
-        <!--좌측 로고 이미지 사진-->
-        <div class="flex-grow-1"></div>
-        <!--빈 여백 채우고 정렬-->
-        <nav class="menu-box-1">
-          <!--메인 상단바 1차 메뉴 아이템 박스-->
-          <ul class="flex height-100p">
-            <!--flex 높이100%-->
-            <li>
-              <a href="#" class="flex height-100p flex-ai-c">소개</a>
-              <!--메뉴 아이템 텍스트 flex 높이100% 가운데정렬-->
-              <div class="con-min-width">
-                <!--메뉴 2차 아이템 박스, 너비 최소 사이즈-->
-                <div class="con">
-                  <!--고정 사이즈-->
-                  <ul class="flex">
-                    <!--2차 메뉴 아이템 이하 flex-->
-                    <li>
-                      <a href="#" class="block">소개</a>
-                      <ul>
-                        <li><a href="#" class="block">자기소개</a></li>
-                      </ul>
-                    </li>
-                    <li>
-                      <a href="#" class="block">기타사항</a>
-                      <ul>
-                        <li><a href="#" class="block">학력, 주요경력, 자격증</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-            <li>
-              <a href="#" class="flex height-100p flex-ai-c">적용 스킬</a>
-              <div class="con-min-width">
-                <div class="con">
-                  <ul class="flex">
-                    <li>
-                      <a href="#" class="block">주요 스킬 적용</a>
-                      <ul>
-                        <li><a href="#" class="block">쇼핑몰 첫화면 구현</a></li>
-                        <li><a href="#" class="block">00뱅크 첫화면 모작</a></li>
-                        <li><a href="#" class="block">JAVA를 활용한 게시판 구현</a></li>
-                        <li><a href="#" class="block">개인 프로필 링크 만들기</a></li>
-                        <li><a href="#" class="block">미니 쇼핑 만들기</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-            <li>
-              <a href="#" class="flex height-100p flex-ai-c">질의 및 응답</a>
-              <div class="con-min-width">
-                <div class="con">
-                  <ul class="flex">
-                    <li>
-                      <a href="#" class="block">이용안내</a>
-                      <ul>
-                        <li><a href="#" class="block">자주 묻는 질문</a></li>
-                      </ul>
-                    </li>
-                    <li>
-                      <a href="#" class="block">문의하기</a>
-                      <ul>
-                        <li><a href="#" class="block">1:1 문의</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-            <li>
-              <a href="#" class="flex height-100p flex-ai-c">회원가입</a>
-            </li>
-          </ul>
-        </nav>
-        <a href="#" class="btn-submit-document flex flex-ai-c">
-          <!--우측 별도 메뉴 아이템 텍스트-->
-          <span class="block"> 로그인 </span>
-          <!--display-->
-        </a>
-      </div>
-    </div>
-    <div class="page-1 con-min-width">
-      <!--메인 이미지 총괄-->
-      <div class="con">
-        <!--고정 사이즈-->
-        <div class="img-box">
-          <!--이미지 박스 사이즈-->
-          <div class="slide-active" style="width: 1046px; margin-right: 60px;">
-          </div>
-          <img src="이미지/메인배경.png" alt="" />
-          <!--이미지1-->
-            <div class="slogan">
-              <h1>
-                프론트엔드 개발자 0년차<br />
-                염보연을 소개합니다.
-              </h1>
-              <p class="slogan-a">항상 긍정적인 마인드로 웃으며 나보다 남을 위하자♡</p>
-            </div>  
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+    <link
+      rel="stylesheet"
+      href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css)"
+    /> -->
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./index.js"></script>
   </body>
