@@ -215,6 +215,10 @@ label[for] {
   width: calc(100% - 100px);
 }
 
+.height-250px {
+  height: 250px;
+}
+
 .height-100p {
   height: 100%;
 }
@@ -485,7 +489,13 @@ label[for] {
 .page-1 > .con > .img-box > img {
   width: 1200px;
   height: 700px;
-  object-fit: scale-down;
+  object-fit: scale-down; /*이미지 컨테이너 박스 내 크기 맞추기*/
+}
+
+.intro_cont_divider {
+  width: 100%;
+  height: 32px;
+  background-color: #fafafa;
 }
 
 /*========== 1페이지 ==========*/
@@ -554,13 +564,17 @@ h1 {
 
 /*소개글 이미지*/
 .page-2 > .con > .img-box > img {
-  width: 300px;
-  height: 200px;
+  width: 500px;
+  height: 300px;
   margin-left: 5%;
+  border-radius: 10px;
 }
 
-/*intro_1 소개이미지 우측 정렬(진행중)*/
-.page-2 > .con > .intro_1 > h2 {
+/*intro_1 소개이미지 우측 정렬*/
+.page-2 > .con > .img-box > .intro_1 {
+  margin-left: 10px;
+  font-size: 1.6rem;
+  line-height: 1.4; /*줄 높이*/
 }
 
 /*커스텀, 넘치는거 처음부터 없애기*/
@@ -569,13 +583,13 @@ body {
   overflow-x: hidden; /*음수마진으로 인해 넘치는 부분으로 스크롤바가 생기게 되는 버그를 없애주도록 처리*/
 }
 
-/*하나의 박스로 구성해야 유지보수,관리 용이*/
+/*적용 사례 리스트(이미지,이름,스킬) 박스로 구성해야 유지보수,관리 용이*/
 .cell {
   float: left; /*강제로 좌로 뜨게 한다.*/
   box-sizing: border-box; /*너비와 높이에 패딩과 테두리가 포함 적용한대로 박스안에 들어감*/
 }
 
-/*하단 이미지 총괄 박스 자식 상품 박스에게 좌우측 튀어나온 부분 음수마진으로 라인 맞추기 */
+/*적용 사례 리스트(이미지,이름,스킬) 박스에게 좌우측 튀어나온 부분 음수마진으로 라인 맞추기 */
 .prod-list-box-1 > ul {
   margin-left: -15px;
   margin-right: -15px;
@@ -583,8 +597,75 @@ body {
 
 /*적용 사례 리스트(이미지,이름,스킬) 박스*/
 .prod-list-box-1 > ul > li {
-  margin-top: 20px;
   width: calc(100% / 4); /*한 라인에 나올 갯수만큼 나누기*/
   padding: 0 10px;
   cursor: pointer;
+}
+
+/*이미지 박스*/
+.prod-list-box-1 > ul > li > .img-box {
+  position: relative; /*이미지박스에 배경 전체 적용됨(투명,불투명 적용)*/
+  overflow: hidden; /*이미지 크게 되면서 넘치는 부분 자르기*/
+}
+
+/*적용 사례 글자, 마우스 갓다대면 글자 하단부 라인생기게 하기*/
+.prod-list-box-1 > ul > li:hover > .name {
+  text-decoration: underline;
+}
+
+/*적용 사례 글자, 적용 스킬 텍스트 정렬*/
+.prod-list-box-1 > ul > li > .name,
+.prod-list-box-1 > ul > li > .skill {
+  text-align: center;
+}
+
+.prod-list-box-1 > ul > li > .img-box::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0); /*앞 1,2,3번 색깔, 4번 투명도*/
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: background-color 0.3s;
+  z-index: 1;
+}
+
+.prod-list-box-1 > ul > li:hover > .img-box::before {
+  background-color: rgba(0, 0, 0, 0.5); /*마지막 숫자 투명도*/
+}
+
+/*이미지박스에 vlew 효과주기*/
+.prod-list-box-1 > ul > li > .img-box::after {
+  /*이미지 박스에서 맨 위로 올라와야 하기에 after로 줘야 함(before 말고)*/
+  content: "view";
+  text-transform: uppercase; /*대문자로 변환*/
+  position: absolute; /*해줘야 위치 조정*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  border: 3px solid white;
+  border-radius: 5px;
+  padding: 3px;
+  opacity: 0; /*투명도*/
+  transition: opacity 0.4s;
+  z-index: 2; /*숫자가 높은게 우선순위로 화면 맨 위로 올라옴*/
+}
+
+/*vlew 마우스 올렸을 때 반투명으로 보이게 하기*/
+.prod-list-box-1 > ul > li:hover > .img-box::after {
+  opacity: 1;
+}
+
+/*이미지 마우스 올렸을 때 크게 보이는 효과 시간 주기*/
+.prod-list-box-1 > ul > li:hover > .img-box > img {
+  transition: transform 0.3s;
+}
+
+/*이미지 사이즈 크게 하기*/
+.prod-list-box-1 > ul > li:hover > .img-box > img {
+  transform: scale(1.3);
 }
