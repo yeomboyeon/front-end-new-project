@@ -5,17 +5,189 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!-- <link
-      href="[https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap](https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap)"
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css)"
-    /> -->
-    <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
+    <div class="top-bar con-min-width">
+      <!--메인 상단바, 너비 최소 사이즈-->
+      <div class="con height-100p flex">
+        <!--con, 높이100%, flex-->
+        <div class="logo flex flex-ai-l">
+          <!--좌측 로고 이미지, 이미지 박스, flex, 가운데정렬-->
+          <img src="./이미지/태극기.png" alt="">
+          <!--좌측 로고 이미지 사진-->
+        </div>
+        <div class="flex-grow-1"></div>
+        <!--빈 여백 채우고 정렬-->
+        <nav class="menu-box-1">
+          <!--메인 상단바 1차 메뉴 아이템 박스-->
+          <ul class="flex height-100p">
+            <!--flex 높이100%-->
+            <li>
+              <a href="#" class="flex height-100p flex-ai-c">소개</a>
+              <!--메뉴 아이템 텍스트 flex 높이100% 가운데정렬-->
+              <div class="con-min-width">
+                <!--메뉴 2차 아이템 박스, 너비 최소 사이즈-->
+                <div class="con">
+                  <!--고정 사이즈-->
+                  <ul class="flex">
+                    <!--2차 메뉴 아이템 이하 flex-->
+                    <li>
+                      <a href="#" class="block">소개</a>
+                      <ul>
+                        <li><a href="#" class="block">자기소개</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#" class="block">기타사항</a>
+                      <ul>
+                        <li><a href="#" class="block">학력, 주요경력, 자격증</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#" class="flex height-100p flex-ai-c">학습을 적용한 사례</a>
+              <div class="con-min-width">
+                <div class="con">
+                  <ul class="flex">
+                    <li>
+                      <a href="#" class="block">주요 사례물</a>
+                      <ul>
+                        <li><a href="#" class="block">쇼핑몰 첫화면 구현</a></li>
+                        <li><a href="#" class="block">00뱅크 첫화면 모작</a></li>
+                        <li><a href="#" class="block">개인 프로필 링크</a></li>
+                        <li><a href="#" class="block">미니 쇼핑 만들기</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#" class="flex height-100p flex-ai-c">질의 및 응답</a>
+              <div class="con-min-width">
+                <div class="con">
+                  <ul class="flex">
+                    <li>
+                      <a href="#" class="block">이용안내</a>
+                      <ul>
+                        <li><a href="#" class="block">자주 묻는 질문</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#" class="block">문의하기</a>
+                      <ul>
+                        <li><a href="#" class="block">1:1 문의</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#" class="flex height-100p flex-ai-c">회원가입</a>
+            </li>
+          </ul>
+        </nav>
+        <a href="#" class="btn-submit-document flex flex-ai-c">
+          <!--우측 별도 메뉴 아이템 텍스트-->
+          <span class="block"> 로그인 </span>
+          <!--display-->
+        </a>
+      </div>
+    </div>
+    <div class="module_content relative">
+    <div class="page-1 con-min-width relative">
+      <!--메인 이미지 총괄-->
+      <div class="con">
+        <!--고정 사이즈-->
+        <div class="img-box">
+          <!--이미지 박스 사이즈-->
+          <img src="이미지/하트 배경1.png" alt="" />    
+          <!--이미지-->
+          <div class="slogan">
+            <div class="slide-active">
+            </div>
+            <h1>
+              프론트엔드 개발자 0년차<br />
+              염보연을 소개합니다.
+            </h1>
+            <p class="slogan-a">항상 긍정적인 마인드로 웃으며 나보다 남을 위하자♡</p>
+          </div>  
+        </div>
+      </div>
+    </div>
+    <div class="page-2 con-min-width relative">
+      <!--2페이지 이미지 총괄-->
+      <div class="con">
+        <!--고정 사이즈-->
+        <div class="img-box flex"><img src="이미지/가족사진.jpg" alt="">
+        <div class="intro_1">
+          <h2>염보연 (1986.12.21.)</h2>
+          <h2>H.P : 010-6548-8455
+          <br>E-Mail : yeomboyeon1221@gmail.com
+          <br>Homepage : https://yeomboyeon.tistory.com
+          <br>Github : https://github.com/yeomboyeon</h2>
+        </div>
+      </div>
+        <div class="주요 기술 명칭">
+          <h2>숙련 기술</h2>
+          <h2>Javascript
+            HTML, CSS, Javascript, Java, github, Node.js, React.js, DBMS, jquery</h2>
+        </div>
+        <div class="적용 사례">
+          <h2>주요 적용 사례</h2>
+          <div class="prod-list-box-1 con 적용 사례 총괄">
+            <ul class="row 이미지,제목 묶음">
+              <li class="cell">
+                <div class="img-box border-black width-200px height-250px"><img src="주소쓰던지, 이미지링크넣던지" alt=""></div>
+                <div class="name">쇼핑몰 첫화면 구현</div>
+                <div class="skill">HTML, CSS, Javascript, JAVA</div>
+              </li>
+              <li class="cell">
+                <div class="img-box border-black width-200px height-250px"><img src="주소쓰던지, 이미지링크넣던지" alt=""></div>
+                <div class="name">000뱅크 첫화면 모작</div>
+                <div class="skill">HTML, CSS, Javascript, JAVA</div>
+              </li>
+              <li class="cell">
+                <div class="img-box border-black width-200px height-250px"><img src="주소쓰던지, 이미지링크넣던지" alt=""></div>
+                <div class="name">개인 프로필 링크 구현</div>
+                <div class="skill">HTML, CSS, Javascript, JAVA</div>
+              </li>
+              <li class="cell">
+                <div class="img-box border-black width-200px height-250px"><img src="주소쓰던지, 이미지링크넣던지" alt=""></div>
+                <div class="name">Java CRUD형 게시판 구현</div>
+                <div class="skill">HTML, CSS, Javascript, JAVA</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-3 con-min-width">
+      <!--3페이지 총괄-->
+      <div class="con">
+        <!--고정 사이즈-->
+        </div>
+      </div>
+    </div>
+    <div class="page-4 con-min-width relative">
+      <!--4페이지 총괄-->
+      <div class="con">
+        <!--고정 사이즈-->
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./index.js"></script>
   </body>

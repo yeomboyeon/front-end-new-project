@@ -155,6 +155,10 @@ label[for] {
   width: 100px;
 }
 
+.width-200px {
+  width: 200px;
+}
+
 .width-100p {
   width: 100%;
 }
@@ -219,6 +223,9 @@ label[for] {
   height: 50%;
 }
 
+.height-250px {
+  height: 250px;
+}
 .border-box {
   box-sizing: border-box;
 }
@@ -243,6 +250,10 @@ label[for] {
 
 .border-red {
   border: 10px solid red;
+}
+
+.border-black {
+  border: 2px solid black;
 }
 
 .border-green {
@@ -334,6 +345,11 @@ label[for] {
   flex: 1 0 0;
 }
 
+* > .position-f {
+  position: fixed;
+  top: 0px;
+}
+
 /* 커스텀 */
 
 /*-2번째----상단 메뉴바-----*/
@@ -341,7 +357,7 @@ label[for] {
 /* 고정형 .con 시작 */
 .con-min-width {
   /*최소 사이즈 */
-  min-width: 1080px;
+  min-width: 100%;
 }
 
 .con {
@@ -357,10 +373,7 @@ label[for] {
 
 /*-3번째----상단 메뉴박스, 아이템-----*/
 
-.top-bar .logo {
-  /*좌측 상단 아이콘 사이즈*/
-  font-size: 3rem;
-}
+/* .top-bar .logo {좌측 상단 아이콘 사이즈}*/
 
 .top-bar .menu-box-1 {
   /*메뉴박스 우측 벌리기*/
@@ -375,6 +388,7 @@ label[for] {
 .top-bar .menu-box-1 ul > li > a {
   /*1차 메뉴 아이템 텍스트 가운데 정렬*/
   text-align: center;
+  font-weight: bold;
 }
 
 .top-bar .menu-box-1 ul > li:hover > a {
@@ -384,7 +398,7 @@ label[for] {
 
 .top-bar .menu-box-1 > ul > li > a {
   /*1차 메뉴 아이템 텍스트, 간격, 박스 사이즈, 글자 상하단 투명선*/
-  padding: 0 10px;
+  padding: 0 15px;
   box-sizing: border-box;
   border-top: 2px solid transparent;
   border-bottom: 2px solid transparent;
@@ -414,7 +428,8 @@ label[for] {
   background-color: white;
   left: 0;
   width: 100%;
-  padding: 30px 0;
+  padding: 5px 0;
+  z-index: 2; /*메인 이미지 위로 메뉴 보이기 위함*/
 }
 
 .top-bar .menu-box-1 > ul > li:hover > div {
@@ -445,35 +460,51 @@ label[for] {
   color: #444;
 }
 
-/*-7번째----메인 이미지-----*/
+/*========== 페이지 공통 ==========*/
 
-.page-1 {
+.page-1,
+.page-2,
+.page-3,
+.page-4 {
   /*메인 이미지 좌우측 배경색, 높이*/
   background-color: transparent;
   height: 720px;
+  background-size: contain;
 }
 
-.page-1 > .con > .img-box {
+.page-1 > .con > .img-box,
+.page-2 > .con > .img-box,
+.page-3 > .con > .img-box,
+.page-4 > .con > .img-box {
   /*메인 이미지 박스, 마진*/
   margin: 0 -60px;
-  position: absolute; /*넣고 안넣고에 따라 메뉴 안보임*/
+  position: relative; /*이미지박스에 배경 전체 적용됨(투명,불투명 적용)*/
+  overflow: hidden; /*이미지 크게 되면서 넘치는 부분 자르기*/
 }
+
+.page-1 > .con > .img-box > img {
+  width: 1200px;
+  height: 700px;
+  object-fit: scale-down;
+}
+
+/*========== 1페이지 ==========*/
 
 .slogan {
   /*메인 이미지 내부 글 총괄*/
-  color: white;
-  width: 100%;
+  color: black;
+  width: 600px;
   display: block;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 38%;
+  left: 25%;
 }
 
 h1 {
   /*메인 글*/
   font-size: 3.5rem;
   margin-left: 10px;
+  width: 600px;
 }
 
 .slogan-a {
@@ -493,21 +524,67 @@ h1 {
   }
 }
 
-.img-box .slide-active::after {
+/*라이브러리, float 사용시 항상 추가 태그*/
+.row::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.slide-active::after {
   /*메인 이미지 내부 움직이는 밑줄*/
   position: absolute;
   content: "";
-  bottom: 265px;
-  animation: progressbar 3s linear infinite; /*infinite 무한반복*/
+  bottom: 65px;
+  animation: progressbar 4s linear infinite; /*infinite 무한반복*/
   animation-delay: 0.3s; /*엘리먼트 로드 후 시작 시간*/
   z-index: 2;
 }
 
-.img-box .slide-active::after {
+.slide-active::after {
   /*메인 이미지 내부 움직이는 밑줄*/
   position: absolute;
   content: "";
-  bottom: 265px;
+  bottom: 65px;
   height: 7px;
   z-index: 1;
+}
+
+/*========== 2페이지 ==========*/
+
+/*소개글 이미지*/
+.page-2 > .con > .img-box > img {
+  width: 300px;
+  height: 200px;
+  margin-left: 5%;
+}
+
+/*intro_1 소개이미지 우측 정렬(진행중)*/
+.page-2 > .con > .intro_1 > h2 {
+}
+
+/*커스텀, 넘치는거 처음부터 없애기*/
+html,
+body {
+  overflow-x: hidden; /*음수마진으로 인해 넘치는 부분으로 스크롤바가 생기게 되는 버그를 없애주도록 처리*/
+}
+
+/*하나의 박스로 구성해야 유지보수,관리 용이*/
+.cell {
+  float: left; /*강제로 좌로 뜨게 한다.*/
+  box-sizing: border-box; /*너비와 높이에 패딩과 테두리가 포함 적용한대로 박스안에 들어감*/
+}
+
+/*하단 이미지 총괄 박스 자식 상품 박스에게 좌우측 튀어나온 부분 음수마진으로 라인 맞추기 */
+.prod-list-box-1 > ul {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+/*적용 사례 리스트(이미지,이름,스킬) 박스*/
+.prod-list-box-1 > ul > li {
+  margin-top: 20px;
+  width: calc(100% / 4); /*한 라인에 나올 갯수만큼 나누기*/
+  padding: 0 10px;
+  cursor: pointer;
 }
